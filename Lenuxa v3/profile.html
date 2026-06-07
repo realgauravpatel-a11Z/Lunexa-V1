@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile — Lunexa</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M10 22 L16 10 L22 22' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/auth.css"/>
+</head>
+<body>
+<div class="page-wrap">
+  <header id="navbar"></header>
+  <main>
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>My Profile</span>
+      </nav>
+      <div class="profile-layout" id="profile-layout">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="padding:20px 0;border-top:1px solid rgba(255,255,255,0.07);">
+        <span style="color:rgba(255,255,255,0.35)">&copy; 2025 Lunexa. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/home.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (!requireAuth()) return;
+  const user = Store.getCurrentUser();
+  const fullUser = Store.getUserById(user.id);
+  renderProfile(fullUser || user);
+
+  // Tab from hash
+  const hash = window.location.hash.replace('#','');
+  if (hash) switchTab(hash);
+});
+
+function renderProfile(user) {
+  const layout = document.getElementById('profile-layout');
+  if (!layout) return;
+
+  const orders  = Store.getOrders(user.id);
+  const wlCount = Store.getWishlist(user.id).length;
+  const cartCount = Store.getCart(user.id).reduce((s,i)=>s+i.quantity,0);
+
+  layout.innerHTML = `
+    <!-- Sidebar -->
+    <div class="profile-sidebar">
+      <div class="profile-sidebar-top">
+        <div class="profile-big-avatar">${user.avatar || user.name.charAt(0).toUpperCase()}</div>
+        <div class="profile-sidebar-name">${user.name}</div>
+        <div class="profile-sidebar-email">${user.email}</div>
+      </div>
+      <nav class="profile-nav">
+        <button class="profile-nav-item active" id="tab-btn-overview" onclick="switchTab('overview')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Overview
+        </button>
+        <button class="profile-nav-item" id="tab-btn-orders" onclick="switchTab('orders')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Order History
+          ${orders.length > 0 ? `<span style="margin-left:auto;background:var(--gold-pale);color:var(--gold-2);font-size:11px;font-weight:600;padding:1px 7px;border-radius:var(--r-pill);">${orders.length}</span>` : ''}
+        </button>
+        <button class="profile-nav-item" id="tab-btn-settings" onclick="switchTab('settings')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Account Settings
+        </button>
+        <div style="height:1px;background:var(--border);margin:8px 0;"></div>
+        <a href="wishlist.html" class="profile-nav-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Wishlist
+        </a>
+        <a href="products.html" class="profile-nav-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="7" height="7" rx="1"/><rect x="15" y="3" width="7" height="7" rx="1"/><rect x="2" y="14" width="7" height="7" rx="1"/><rect x="15" y="14" width="7" height="7" rx="1"/></svg>
+          Browse Products
+        </a>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="profile-content">
+
+      <!-- Overview -->
+      <div class="profile-panel active" id="panel-overview">
+        <h2 class="profile-panel-title">Overview</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;">
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow-card);">
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-2);margin-bottom:8px;">Total Orders</div>
+            <div style="font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--obsidian);">${orders.length}</div>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow-card);">
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-2);margin-bottom:8px;">Wishlist Items</div>
+            <div style="font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--obsidian);">${wlCount}</div>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow-card);">
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-2);margin-bottom:8px;">Cart Items</div>
+            <div style="font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--obsidian);">${cartCount}</div>
+          </div>
+        </div>
+
+        ${orders.length > 0 ? `
+          <h3 style="font-family:var(--font-display);font-size:20px;font-weight:600;margin-bottom:16px;">Recent Orders</h3>
+          ${orders.slice(0,3).map(o => renderOrderCard(o)).join('')}
+          ${orders.length > 3 ? `<button class="btn btn-outline btn-pill" style="margin-top:8px;width:100%;" onclick="switchTab('orders')">View All ${orders.length} Orders</button>` : ''}
+        ` : `
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:48px 32px;text-align:center;box-shadow:var(--shadow-card);">
+            <div style="width:60px;height:60px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--slate-3)"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:8px;">No orders yet</h3>
+            <p style="color:var(--slate);font-size:14.5px;margin-bottom:20px;">Explore our collection and place your first order.</p>
+            <a href="products.html" class="btn btn-primary btn-pill">Start Shopping</a>
+          </div>
+        `}
+      </div>
+
+      <!-- Orders -->
+      <div class="profile-panel" id="panel-orders">
+        <h2 class="profile-panel-title">Order History</h2>
+        ${orders.length > 0
+          ? orders.map(o => renderOrderCard(o)).join('')
+          : `<div style="text-align:center;padding:60px 0;color:var(--slate);">No orders yet. <a href="products.html" style="color:var(--gold);text-decoration:underline;">Start shopping</a>.</div>`
+        }
+      </div>
+
+      <!-- Settings -->
+      <div class="profile-panel" id="panel-settings">
+        <h2 class="profile-panel-title">Account Settings</h2>
+        <div class="admin-form-box">
+          <h3>Personal Information</h3>
+          <form id="settings-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="s-name">Full Name</label>
+                <input type="text" id="s-name" value="${user.name}" required/>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="s-email">Email Address</label>
+                <input type="email" id="s-email" value="${user.email}" required/>
+                <span class="field-error"></span>
+              </div>
+            </div>
+            <h3 style="margin-top:20px;margin-bottom:14px;font-size:14px;font-weight:600;color:var(--obsidian);">Saved Address</h3>
+            <div class="form-group">
+              <label for="s-street">Street Address</label>
+              <input type="text" id="s-street" value="${user.address?.street || ''}" placeholder="123 Main St"/>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="s-city">City</label>
+                <input type="text" id="s-city" value="${user.address?.city || ''}" placeholder="New York"/>
+              </div>
+              <div class="form-group">
+                <label for="s-state">State</label>
+                <input type="text" id="s-state" value="${user.address?.state || ''}" placeholder="NY"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="s-zip">Postal Code</label>
+                <input type="text" id="s-zip" value="${user.address?.zip || ''}" placeholder="10001"/>
+              </div>
+              <div class="form-group">
+                <label for="s-country">Country</label>
+                <input type="text" id="s-country" value="${user.address?.country || 'US'}" placeholder="US"/>
+              </div>
+            </div>
+            <div id="settings-msg" style="display:none;margin-top:12px;"></div>
+            <button type="submit" class="btn btn-primary" style="margin-top:16px;">Save Changes</button>
+          </form>
+        </div>
+
+        <div class="admin-form-box" style="margin-top:20px;">
+          <h3>Danger Zone</h3>
+          <p style="font-size:14px;color:var(--slate);margin-bottom:16px;">Sign out of your account on this device.</p>
+          <button class="btn" style="background:#fff0f0;color:var(--error);border:1px solid #fccaca;" onclick="handleLogout()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sign Out
+          </button>
+        </div>
+      </div>
+
+    </div>
+  `;
+
+  // Bind settings form
+  document.getElementById('settings-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const updates = {
+      name:    document.getElementById('s-name').value.trim(),
+      email:   document.getElementById('s-email').value.trim().toLowerCase(),
+      avatar:  document.getElementById('s-name').value.trim().charAt(0).toUpperCase(),
+      address: {
+        street:  document.getElementById('s-street').value.trim(),
+        city:    document.getElementById('s-city').value.trim(),
+        state:   document.getElementById('s-state').value.trim(),
+        zip:     document.getElementById('s-zip').value.trim(),
+        country: document.getElementById('s-country').value.trim(),
+      }
+    };
+    Store.updateUser(user.id, updates);
+    const msg = document.getElementById('settings-msg');
+    if (msg) {
+      msg.innerHTML = '<div class="auth-success"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Settings saved successfully.</div>';
+      msg.style.display = 'block';
+      setTimeout(() => { msg.style.display='none'; }, 3000);
+    }
+  });
+}
+
+function renderOrderCard(order) {
+  const date = new Date(order.date).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+  const statusColors = { placed:'placed', packed:'packed', shipped:'shipped', delivered:'delivered', 'out-for-delivery':'shipped' };
+  const sc = statusColors[order.status] || 'placed';
+  return `
+    <div class="order-card">
+      <div class="order-card-header">
+        <div>
+          <div class="order-id">${order.id}</div>
+          <div class="order-date">${date}</div>
+        </div>
+        <span class="order-status-pill ${sc}">${order.status.replace(/-/g,' ')}</span>
+      </div>
+      <div class="order-items-preview">
+        ${order.items.slice(0,4).map(i => `
+          <div class="order-item-thumb">
+            <img src="${i.image||''}" alt="${i.name||''}" style="width:100%;height:100%;object-fit:cover;"
+                 onerror="this.src='https://picsum.photos/seed/fb${i.productId}/80/80'"/>
+          </div>`).join('')}
+        ${order.items.length > 4 ? `<div class="order-item-thumb" style="display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--slate);">+${order.items.length-4}</div>` : ''}
+      </div>
+      <div class="order-card-footer">
+        <span class="order-total">$${order.total.toFixed(2)}</span>
+        <a href="tracking.html?order=${order.id}&tracking=${order.trackingId}" class="order-track-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Track Order
+        </a>
+      </div>
+    </div>`;
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.profile-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.profile-nav-item').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById(`panel-${tab}`);
+  const btn   = document.getElementById(`tab-btn-${tab}`);
+  if (panel) panel.classList.add('active');
+  if (btn)   btn.classList.add('active');
+  window.history.replaceState({}, '', `profile.html#${tab}`);
+}
+
+function handleLogout() { Auth.logout(); window.location.href = 'index.html'; }
+</script>
+</body>
+</html>

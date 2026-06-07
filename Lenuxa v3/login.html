@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — Lunexa</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M10 22 L16 10 L22 22' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/auth.css"/>
+</head>
+<body>
+<div class="auth-page">
+
+  <!-- Brand panel -->
+  <div class="auth-brand">
+    <div class="auth-brand-logo">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" style="color:var(--gold)">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 22 L16 10 L22 22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 18.5 H20" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+      </svg>
+      <span class="auth-brand-logo-text">LUNEXA</span>
+    </div>
+    <h1 class="auth-brand-headline">Welcome<br><em>Back.</em></h1>
+    <p class="auth-brand-sub">Sign in to access your personalized dashboard, order history, wishlist, and exclusive member benefits.</p>
+    <div class="auth-brand-features">
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Persistent cart across sessions
+      </div>
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Full order history and tracking
+      </div>
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Saved wishlist and preferences
+      </div>
+    </div>
+  </div>
+
+  <!-- Form panel -->
+  <div class="auth-form-col">
+    <div class="auth-box">
+      <h2 class="auth-box-title">Sign In</h2>
+      <p class="auth-box-sub">New to Lunexa? <a href="signup.html">Create an account</a></p>
+
+      <div id="auth-error" class="auth-error" style="display:none">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="auth-error-text"></span>
+      </div>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required autocomplete="email"/>
+          <span class="field-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" placeholder="Enter your password" required autocomplete="current-password"/>
+            <span class="password-toggle" onclick="togglePwd('password', this)" title="Show/hide password">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+          </div>
+          <span class="field-error"></span>
+        </div>
+
+        <button type="submit" class="auth-submit-btn" id="login-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Sign In
+        </button>
+      </form>
+
+      <div class="auth-divider">or</div>
+
+      <div style="background:var(--cream-2);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px;font-size:13px;color:var(--slate);line-height:1.6;">
+        <strong style="color:var(--obsidian);">Demo account:</strong> Sign up with any email to get started instantly. All data is stored locally in your browser.
+      </div>
+
+      <p style="text-align:center;font-size:12.5px;color:var(--slate-2);margin-top:20px;line-height:1.6;">
+        By signing in you agree to our
+        <a href="privacy.html" style="color:var(--slate);text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script>
+  // Redirect if already logged in
+  document.addEventListener('DOMContentLoaded', () => {
+    if (Store.isLoggedIn()) { window.location.href = 'profile.html'; return; }
+    bindForm();
+  });
+
+  function bindForm() {
+    const form = document.getElementById('login-form');
+    form.querySelectorAll('input').forEach(f => {
+      f.addEventListener('blur', () => validateLoginField(f));
+      f.addEventListener('input', () => { if (f.classList.contains('error')) validateLoginField(f); });
+    });
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('input').forEach(f => { if (!validateLoginField(f)) valid = false; });
+      if (!valid) return;
+
+      const btn = document.getElementById('login-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Signing in…';
+
+      setTimeout(() => {
+        const result = Auth.login(
+          document.getElementById('email').value.trim(),
+          document.getElementById('password').value
+        );
+        if (result.success) {
+          // Redirect to original page or profile
+          const params = new URLSearchParams(window.location.search);
+          const redirect = params.get('redirect') || 'profile.html';
+          window.location.href = redirect;
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Sign In';
+          showError(result.error);
+        }
+      }, 800);
+    });
+  }
+
+  function validateLoginField(input) {
+    const val = input.value.trim();
+    let error = '';
+    if (!val) error = 'This field is required.';
+    else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) error = 'Enter a valid email address.';
+    const g = input.closest('.form-group');
+    const e = g?.querySelector('.field-error');
+    if (error) { input.classList.add('error'); if (e) e.textContent = error; }
+    else       { input.classList.remove('error'); if (e) e.textContent = ''; }
+    return !error;
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('auth-error');
+    const tx = document.getElementById('auth-error-text');
+    if (el && tx) { tx.textContent = msg; el.style.display = 'flex'; }
+  }
+
+  function togglePwd(id, btn) {
+    const inp = document.getElementById(id);
+    if (!inp) return;
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+    btn.style.color = inp.type === 'text' ? 'var(--obsidian)' : '';
+  }
+</script>
+</body>
+</html>
