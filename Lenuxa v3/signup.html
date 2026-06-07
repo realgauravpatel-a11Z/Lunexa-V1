@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account — Lunexa</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M10 22 L16 10 L22 22' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/auth.css"/>
+</head>
+<body>
+<div class="auth-page">
+
+  <!-- Brand panel -->
+  <div class="auth-brand">
+    <div class="auth-brand-logo">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" style="color:var(--gold)">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 22 L16 10 L22 22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 18.5 H20" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+      </svg>
+      <span class="auth-brand-logo-text">LUNEXA</span>
+    </div>
+    <h1 class="auth-brand-headline">Join the<br><em>Experience.</em></h1>
+    <p class="auth-brand-sub">Create your Lunexa account and unlock a premium shopping experience tailored entirely to you.</p>
+    <div class="auth-brand-features">
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Personal profile with saved address
+      </div>
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Order history with live tracking
+      </div>
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Private wishlist synced to your account
+      </div>
+      <div class="auth-brand-feat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No email or credit card required
+      </div>
+    </div>
+  </div>
+
+  <!-- Form panel -->
+  <div class="auth-form-col">
+    <div class="auth-box">
+      <h2 class="auth-box-title">Create Account</h2>
+      <p class="auth-box-sub">Already have an account? <a href="login.html">Sign in</a></p>
+
+      <div id="auth-error" class="auth-error" style="display:none">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="auth-error-text"></span>
+      </div>
+
+      <form class="auth-form" id="signup-form" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required autocomplete="name"/>
+          <span class="field-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required autocomplete="email"/>
+          <span class="field-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" placeholder="Minimum 6 characters" required autocomplete="new-password"/>
+            <span class="password-toggle" onclick="togglePwd('password', this)" title="Show/hide password">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+          </div>
+          <span class="field-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="password-wrap">
+            <input type="password" id="confirm-password" placeholder="Repeat your password" required autocomplete="new-password"/>
+            <span class="password-toggle" onclick="togglePwd('confirm-password', this)" title="Show/hide password">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+          </div>
+          <span class="field-error"></span>
+        </div>
+
+        <!-- Password strength -->
+        <div id="pwd-strength" style="display:none;margin-bottom:16px;">
+          <div style="display:flex;gap:4px;margin-bottom:4px;">
+            <div class="pwd-bar" id="pbar-1" style="flex:1;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s;"></div>
+            <div class="pwd-bar" id="pbar-2" style="flex:1;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s;"></div>
+            <div class="pwd-bar" id="pbar-3" style="flex:1;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s;"></div>
+            <div class="pwd-bar" id="pbar-4" style="flex:1;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s;"></div>
+          </div>
+          <div id="pwd-label" style="font-size:11.5px;color:var(--slate-2);"></div>
+        </div>
+
+        <button type="submit" class="auth-submit-btn" id="signup-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          Create Account
+        </button>
+      </form>
+
+      <p style="text-align:center;font-size:12.5px;color:var(--slate-2);margin-top:20px;line-height:1.6;">
+        By creating an account you agree to our
+        <a href="privacy.html" style="color:var(--slate);text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>.
+        All data is stored locally in your browser.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (Store.isLoggedIn()) { window.location.href = 'profile.html'; return; }
+    bindForm();
+    bindPasswordStrength();
+  });
+
+  function bindForm() {
+    const form = document.getElementById('signup-form');
+    form.querySelectorAll('input').forEach(f => {
+      f.addEventListener('blur', () => validateSignupField(f));
+      f.addEventListener('input', () => { if (f.classList.contains('error')) validateSignupField(f); });
+    });
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('input').forEach(f => { if (!validateSignupField(f)) valid = false; });
+      if (!valid) return;
+
+      const btn = document.getElementById('signup-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Creating account…';
+
+      setTimeout(() => {
+        const result = Auth.signup(
+          document.getElementById('name').value.trim(),
+          document.getElementById('email').value.trim(),
+          document.getElementById('password').value
+        );
+        if (result.success) {
+          // Auto login
+          Auth.login(document.getElementById('email').value.trim(), document.getElementById('password').value);
+          window.location.href = 'profile.html';
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg> Create Account';
+          showError(result.error);
+        }
+      }, 800);
+    });
+  }
+
+  function bindPasswordStrength() {
+    const pwd = document.getElementById('password');
+    const wrap = document.getElementById('pwd-strength');
+    if (!pwd || !wrap) return;
+    pwd.addEventListener('input', () => {
+      const val = pwd.value;
+      if (!val) { wrap.style.display='none'; return; }
+      wrap.style.display = 'block';
+      const strength = calcStrength(val);
+      const colors = ['', '#e74c3c', '#e67e22', '#f1c40f', '#2ecc71'];
+      const labels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`pbar-${i}`).style.background = i <= strength ? colors[strength] : 'var(--border)';
+      }
+      document.getElementById('pwd-label').textContent = labels[strength];
+      document.getElementById('pwd-label').style.color = colors[strength];
+    });
+  }
+
+  function calcStrength(pwd) {
+    let s = 0;
+    if (pwd.length >= 6)  s++;
+    if (pwd.length >= 10) s++;
+    if (/[A-Z]/.test(pwd) || /[0-9]/.test(pwd)) s++;
+    if (/[^A-Za-z0-9]/.test(pwd)) s++;
+    return Math.min(s, 4);
+  }
+
+  function validateSignupField(input) {
+    const val = input.value.trim();
+    let error = '';
+    if (!val) {
+      error = 'This field is required.';
+    } else if (input.id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      error = 'Enter a valid email address.';
+    } else if (input.id === 'password' && input.value.length < 6) {
+      error = 'Password must be at least 6 characters.';
+    } else if (input.id === 'confirm-password') {
+      if (input.value !== document.getElementById('password').value) error = 'Passwords do not match.';
+    }
+    const g = input.closest('.form-group');
+    const e = g?.querySelector('.field-error');
+    if (error) { input.classList.add('error'); if (e) e.textContent = error; }
+    else       { input.classList.remove('error'); if (e) e.textContent = ''; }
+    return !error;
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('auth-error');
+    const tx = document.getElementById('auth-error-text');
+    if (el && tx) { tx.textContent = msg; el.style.display = 'flex'; }
+  }
+
+  function togglePwd(id, btn) {
+    const inp = document.getElementById(id);
+    if (!inp) return;
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+    btn.style.color = inp.type === 'text' ? 'var(--obsidian)' : '';
+  }
+</script>
+</body>
+</html>

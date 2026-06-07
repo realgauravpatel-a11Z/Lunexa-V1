@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Lunexa</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M10 22 L16 10 L22 22' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M12 18.5 H20' stroke='%23C8A96E' stroke-width='2'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="page-wrap">
+  <header id="navbar"></header>
+  <main>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="page-hero-eyebrow">Get in Touch</div>
+          <h1 class="page-hero-title">We're Here to<br><span style="font-style:italic;color:var(--gold)">Help You</span></h1>
+          <p class="page-hero-sub">Have a question about a product, an order, or just want to say hello? Our team typically responds within 24 hours.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact layout -->
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: info -->
+        <div class="contact-info">
+          <h2>Let's Talk</h2>
+          <p>Whether you need help choosing the right product, have a question about your order, or want to give us feedback — we'd love to hear from you.</p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Email Us</div>
+                <div class="contact-method-value">hello@lunexa.store</div>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Phone Support</div>
+                <div class="contact-method-value">+1 (800) 586-3921</div>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Support Hours</div>
+                <div class="contact-method-value">Mon – Fri, 9am – 6pm EST</div>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Headquarters</div>
+                <div class="contact-method-value">San Francisco, CA 94105</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form-box">
+          <h3>Send Us a Message</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-first-name">First Name *</label>
+                <input type="text" id="c-first-name" placeholder="John" required/>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="c-last-name">Last Name *</label>
+                <input type="text" id="c-last-name" placeholder="Doe" required/>
+                <span class="field-error"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email Address *</label>
+              <input type="email" id="c-email" placeholder="john@example.com" required/>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="c-subject">Subject *</label>
+              <select id="c-subject" required>
+                <option value="">Select a topic…</option>
+                <option value="order">Order Inquiry</option>
+                <option value="product">Product Question</option>
+                <option value="return">Returns &amp; Refunds</option>
+                <option value="shipping">Shipping</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Message *</label>
+              <textarea id="c-message" rows="5" placeholder="Tell us how we can help…" required
+                style="padding:11px 14px;border:1px solid var(--border);border-radius:var(--r-md);font-family:var(--font-body);font-size:14px;color:var(--obsidian);background:var(--white);outline:none;resize:vertical;width:100%;transition:border-color var(--t-fast),box-shadow var(--t-fast);"
+                onfocus="this.style.borderColor='var(--obsidian)';this.style.boxShadow='0 0 0 3px rgba(20,20,20,0.07)'"
+                onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'"></textarea>
+              <span class="field-error"></span>
+            </div>
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-full btn-lg" style="margin-top:8px;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success message (hidden) -->
+          <div id="contact-success" style="display:none;text-align:center;padding:32px 0;">
+            <div style="width:56px;height:56px;background:var(--success-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:8px;">Message Sent!</h3>
+            <p style="color:var(--slate);font-size:15px;line-height:1.7;">Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section style="background:var(--white);border-top:1px solid var(--border);padding:72px 0;margin-top:72px;">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <div class="section-eyebrow">FAQ</div>
+          <h2 class="section-title">Common Questions</h2>
+        </div>
+        <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:2px;">
+          <details class="faq-item" style="background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;">
+            <summary style="padding:18px 20px;font-size:15px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+              How long does shipping take?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div style="padding:0 20px 18px;font-size:14px;color:var(--slate);line-height:1.75;">Standard shipping takes 5–7 business days. Express shipping (2–3 days) is available at checkout. All orders over $100 ship free.</div>
+          </details>
+          <details class="faq-item" style="background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-top:4px;">
+            <summary style="padding:18px 20px;font-size:15px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+              What is your return policy?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div style="padding:0 20px 18px;font-size:14px;color:var(--slate);line-height:1.75;">We offer a 30-day hassle-free return policy. Items must be in original condition. Contact us and we'll arrange a free return label.</div>
+          </details>
+          <details class="faq-item" style="background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-top:4px;">
+            <summary style="padding:18px 20px;font-size:15px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+              Are products covered by warranty?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div style="padding:0 20px 18px;font-size:14px;color:var(--slate);line-height:1.75;">All products come with the manufacturer's standard warranty. Electronics typically carry a 1-year warranty. Extended protection plans are available.</div>
+          </details>
+          <details class="faq-item" style="background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-top:4px;">
+            <summary style="padding:18px 20px;font-size:15px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+              Do you ship internationally?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div style="padding:0 20px 18px;font-size:14px;color:var(--slate);line-height:1.75;">Yes, we ship to over 40 countries worldwide. International shipping rates and delivery times vary by destination and are calculated at checkout.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" style="color:var(--gold)"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M10 22 L16 10 L22 22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 18.5 H20" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="10" r="1.5" fill="currentColor"/></svg>
+            <span class="footer-logo-text">LUNEXA</span>
+          </a>
+          <p class="footer-tagline">Premium electronics, gadgets, and accessories for those who demand the very best.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="products.html?cat=electronics">Electronics</a>
+          <a href="products.html?cat=gadgets">Gadgets</a>
+          <a href="products.html?cat=accessories">Accessories</a>
+          <a href="products.html">All Products</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Lunexa</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="wishlist.html">Wishlist</a>
+          <a href="cart.html">Cart</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Returns Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span style="color:rgba(255,255,255,0.35)">&copy; 2025 Lunexa. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/navbar.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.querySelectorAll('input,select,textarea').forEach(f => {
+    f.addEventListener('blur', () => validateContactField(f));
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('input[required],select[required],textarea[required]').forEach(f => {
+      if (!validateContactField(f)) valid = false;
+    });
+    if (!valid) return;
+
+    const btn = document.getElementById('contact-submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Sending…';
+
+    setTimeout(() => {
+      form.style.display = 'none';
+      document.getElementById('contact-success').style.display = 'block';
+    }, 1500);
+  });
+});
+
+function validateContactField(input) {
+  const val = input.value.trim();
+  let error = '';
+  if (input.required && !val) error = 'This field is required.';
+  else if (input.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) error = 'Please enter a valid email address.';
+
+  const group = input.closest('.form-group');
+  const errEl = group ? group.querySelector('.field-error') : null;
+  if (error) {
+    input.style.borderColor = 'var(--error)';
+    if (errEl) errEl.textContent = error;
+  } else {
+    input.style.borderColor = '';
+    if (errEl) errEl.textContent = '';
+  }
+  return !error;
+}
+</script>
+</body>
+</html>
