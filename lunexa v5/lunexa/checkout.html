@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Checkout — Lunexa</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' stroke='%230D1117' stroke-width='2' fill='none'/%3E%3Cpath d='M11 10 L11 22 L21 22' stroke='%230D1117' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='11' cy='10' r='1.5' fill='%230D1117'/%3E%3C/svg%3E"/><link rel="stylesheet" href="css/style.css"/><link rel="stylesheet" href="css/auth.css"/></head><body><div class="page-wrap"><header id="navbar"></header>
+<div class="payment-overlay" id="payment-overlay"><div class="payment-overlay-box"><div class="payment-overlay-spinner"></div><div class="payment-overlay-title">Processing Payment</div><div class="payment-overlay-sub">Please wait…</div></div></div>
+<main><div class="container">
+  <nav class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><a href="cart.html">Cart</a><span class="breadcrumb-sep">›</span><span>Checkout</span></nav>
+  <div class="checkout-layout">
+    <div class="checkout-form-col"><h1>Checkout</h1>
+      <form id="checkout-form" novalidate>
+        <div class="form-section"><div class="form-section-title">Contact</div>
+          <div class="form-row"><div class="form-group"><label for="first-name">First Name *</label><input type="text" id="first-name" placeholder="Patel" data-required="true" autocomplete="given-name"/><span class="field-error"></span></div><div class="form-group"><label for="last-name">Last Name *</label><input type="text" id="last-name" placeholder="Gaurav" data-required="true" autocomplete="family-name"/><span class="field-error"></span></div></div>
+          <div class="form-group"><label for="email">Email *</label><input type="email" id="email" placeholder="you@example.com" data-required="true" autocomplete="email"/><span class="field-error"></span></div>
+          <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" placeholder="+91 98765 43210" autocomplete="tel"/></div>
+        </div>
+        <div class="form-section"><div class="form-section-title">Delivery Address</div>
+          <div class="form-group"><label for="address">Street Address *</label><input type="text" id="address" placeholder="123 SG Highway" data-required="true" autocomplete="street-address"/><span class="field-error"></span></div>
+          <div class="form-row"><div class="form-group"><label for="city">City *</label><input type="text" id="city" placeholder="Ahmedabad" data-required="true"/><span class="field-error"></span></div><div class="form-group"><label for="state">State *</label><input type="text" id="state" placeholder="Gujarat" data-required="true"/><span class="field-error"></span></div></div>
+          <div class="form-row"><div class="form-group"><label for="zip">PIN Code *</label><input type="text" id="zip" placeholder="380015" data-required="true"/><span class="field-error"></span></div><div class="form-group"><label for="country">Country *</label><select id="country" data-required="true"><option value="">Select…</option><option value="IN" selected>India</option><option value="US">United States</option><option value="GB">United Kingdom</option><option value="CA">Canada</option><option value="AU">Australia</option><option value="SG">Singapore</option><option value="AE">UAE</option></select><span class="field-error"></span></div></div>
+        </div>
+        <div class="form-section"><div class="form-section-title">Payment</div>
+          <div class="pay-tabs">
+            <button type="button" class="pay-tab active" data-method="card"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Card</button>
+            <button type="button" class="pay-tab" data-method="upi"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>UPI</button>
+            <button type="button" class="pay-tab" data-method="cod"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Cash on Delivery</button>
+          </div>
+          <div class="pay-panel active" id="panel-card">
+            <div class="card-type-icons"><span class="card-icon-pill">VISA</span><span class="card-icon-pill">MC</span><span class="card-icon-pill">AMEX</span><span class="card-icon-pill">RUPAY</span></div>
+            <div class="form-group"><label for="card-number">Card Number *</label><input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric" required/><span class="field-error"></span></div>
+            <div class="form-group"><label for="card-name">Name on Card *</label><input type="text" id="card-name" placeholder="Patel Gaurav" required/><span class="field-error"></span></div>
+            <div class="form-row"><div class="form-group"><label for="card-expiry">Expiry *</label><input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" inputmode="numeric" required/><span class="field-error"></span></div><div class="form-group"><label for="card-cvv">CVV *</label><input type="text" id="card-cvv" placeholder="123" maxlength="4" inputmode="numeric" required/><span class="field-error"></span></div></div>
+          </div>
+          <div class="pay-panel" id="panel-upi">
+            <div style="background:var(--surface-3);border:1px solid var(--border);border-radius:var(--r-md);padding:12px 14px;font-size:13.5px;color:var(--muted);margin-bottom:14px;">Enter your UPI ID (GPay, PhonePe, Paytm etc.)</div>
+            <div class="form-group"><label for="upi-id">UPI ID *</label><input type="text" id="upi-id" placeholder="yourname@paytm" required/><span class="field-error"></span></div>
+          </div>
+          <div class="pay-panel" id="panel-cod">
+            <div style="background:var(--surface-3);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px;display:flex;gap:12px;align-items:flex-start;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <div><div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px;">Pay on Delivery</div><div style="font-size:13.5px;color:var(--muted);line-height:1.6;">Pay cash when your order arrives. No advance payment needed. COD fee ₹49 may apply.</div></div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" id="place-order-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Place Order Securely</button>
+        <p style="text-align:center;font-size:12px;color:var(--muted-3);margin-top:12px;">Demo only — no real charges made. By ordering you agree to our <a href="terms.html" style="color:var(--muted);text-decoration:underline;">Terms</a>.</p>
+      </form>
+    </div>
+    <div class="checkout-summary-col"><div id="checkout-summary"></div></div>
+  </div>
+</div></main><footer class="footer"><div class="container"><div class="footer-bottom" style="padding:18px 0;border-top:1px solid rgba(255,255,255,.07);"><div><span style="color:rgba(255,255,255,.3)">&copy; 2025 Lunexa &middot; All rights reserved by DevLeadLabs.</span><div class="footer-devlead">Patel Gaurav &middot; Ahmedabad, India &middot; <a href="mailto:devleadlabs@gmail.com">devleadlabs@gmail.com</a></div></div><div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Support</a></div></div></div></footer></div>
+<script src="js/config.js"></script><script src="js/storage.js"></script><script src="js/data.js"></script><script src="js/cart.js"></script><script src="js/wishlist.js"></script><script src="js/cookie.js"></script><script src="js/navbar.js"></script><script src="js/home.js"></script><script src="js/checkout.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{const user=Store.getCurrentUser();if(!user)return;const full=Store.getUserById(user.id);if(!full)return;const names=(full.name||'').split(' ');const g=id=>document.getElementById(id);if(g('first-name'))g('first-name').value=names[0]||'';if(g('last-name'))g('last-name').value=names.slice(1).join(' ')||'';if(g('email'))g('email').value=full.email||'';if(full.address){const a=full.address;['address','city','state','zip','country'].forEach(k=>{if(g(k)&&a[k==='address'?'street':k])g(k).value=a[k==='address'?'street':k];});}})</script>
+</body></html>
