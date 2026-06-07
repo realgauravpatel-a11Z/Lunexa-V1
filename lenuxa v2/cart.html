@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart — Lunexa</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M10 22 L16 10 L22 22' stroke='%23C8A96E' stroke-width='2' fill='none'/%3E%3Cpath d='M12 18.5 H20' stroke='%23C8A96E' stroke-width='2'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="page-wrap">
+  <header id="navbar"></header>
+  <main>
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Shopping Cart</span>
+      </nav>
+
+      <div class="cart-layout">
+        <div class="cart-items-col">
+          <h1 class="cart-col-title">Shopping Cart</h1>
+          <div id="cart-items"></div>
+        </div>
+        <div>
+          <div class="cart-summary-card" id="cart-summary"></div>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="empty-cart">
+        <div class="empty-icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <h3 class="empty-title">Your cart is empty</h3>
+        <p class="empty-sub">Looks like you haven't added anything yet. Explore our collection and find something you'll love.</p>
+        <a href="products.html" class="btn btn-primary btn-pill" style="margin-top:8px">Start Shopping</a>
+      </div>
+    </div>
+  </main>
+    <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" style="color:var(--gold)">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 22 L16 10 L22 22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M12 18.5 H20" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+            </svg>
+            <span class="footer-logo-text">LUNEXA</span>
+          </a>
+          <p class="footer-tagline">Premium electronics, gadgets, and accessories for those who demand the very best.</p>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email address" />
+            <button>Subscribe</button>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" title="Twitter/X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" title="YouTube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Shop -->
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="products.html?cat=electronics">Electronics</a>
+          <a href="products.html?cat=gadgets">Gadgets</a>
+          <a href="products.html?cat=accessories">Accessories</a>
+          <a href="products.html">All Products</a>
+        </div>
+        <!-- Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Lunexa</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="wishlist.html">Wishlist</a>
+          <a href="cart.html">Shopping Cart</a>
+        </div>
+        <!-- Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Returns Policy</a>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <span style="color:rgba(255,255,255,0.35)">&copy; 2025 Lunexa. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/home.js"></script>
+<script src="js/cartpage.js"></script>
+</body>
+</html>
