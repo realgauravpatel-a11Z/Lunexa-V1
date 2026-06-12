@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Private La Vuerte order tracking opens from a confirmed order link after checkout.">
+  <title>Private Order Tracking | La Vuerte</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="nav nav-inner">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a>
+      <nav class="nav-links" aria-label="Primary navigation"></nav>
+      <div class="nav-actions">
+        <a class="icon-btn" href="wishlist.html" aria-label="Wishlist"></a><span class="wish-count">0</span>
+        <a class="icon-btn" href="cart.html" aria-label="Cart"></a><span class="cart-count">0</span>
+        <a class="btn primary" href="menu.html">Order Now</a>
+        <button class="nav-toggle" aria-label="Open navigation menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80');">
+      <div class="container reveal">
+        <p id="trackingOrderId" class="eyebrow">Private order link</p>
+        <h1>Tracking</h1>
+        <p>Your order progress appears here after checkout, with kitchen status and delivery confidence in one calm view.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div id="trackingContent" class="container grid two">
+        <div id="trackingGate" class="glass-card reservation-box reveal">
+          <h2>Estimated arrival</h2>
+          <p class="display">32 minutes</p>
+          <p>Courier handoff is scheduled after final quality check and thermal packing.</p>
+          <a class="btn primary" href="menu.html">Add dessert</a>
+        </div>
+        <div class="glass-card reservation-box reveal">
+          <h2>Progress</h2>
+          <div class="timeline">
+            <div class="track-step active"><span class="track-dot">1</span><div><h3>Confirmed</h3><p>Kitchen received your order.</p></div></div>
+            <div class="track-step active"><span class="track-dot">2</span><div><h3>Preparing</h3><p>Chef station is plating and finishing.</p></div></div>
+            <div class="track-step active"><span class="track-dot">3</span><div><h3>Quality check</h3><p>Packaging, temperature, and presentation review.</p></div></div>
+            <div class="track-step"><span class="track-dot">4</span><div><h3>On the way</h3><p>Courier assignment is next.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+  <script src="js/wishlist.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

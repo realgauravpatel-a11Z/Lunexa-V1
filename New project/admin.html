@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="La Vuerte admin dashboard UI for orders, users, inventory, vendors, analytics, reviews, and revenue.">
+  <title>Admin Dashboard | La Vuerte</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+  <header class="nav nav-inner"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a><nav class="nav-links"><a href="vendor.html">Vendor</a><a href="menu.html">Menu</a><a href="index.html">Storefront</a></nav><div class="nav-actions"><button class="nav-toggle">Menu</button></div></div></header>
+  <main><section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80');"><div class="container reveal"><p class="eyebrow">UI only</p><h1>Admin</h1><p>Operational dashboard concept for a premium food marketplace and restaurant network.</p></div></section>
+    <section class="section"><div class="container dashboard-grid"><aside class="dash-nav glass-card"><button class="active" data-panel="ordersPanel">Orders</button><button data-panel="usersPanel">Users</button><button data-panel="inventoryPanel">Inventory</button><button data-panel="vendorsPanel">Vendors</button><button data-panel="analyticsPanel">Analytics</button><button data-panel="reviewsPanel">Reviews</button><button data-panel="revenuePanel">Revenue</button></aside><div>
+      <div class="grid four"><div class="metric-card glass-card"><p class="eyebrow">Orders</p><h2>284</h2></div><div class="metric-card glass-card"><p class="eyebrow">Revenue</p><h2>&#8377;36.4L</h2></div><div class="metric-card glass-card"><p class="eyebrow">Rating</p><h2>4.9</h2></div><div class="metric-card glass-card"><p class="eyebrow">Vendors</p><h2>38</h2></div></div>
+      <section id="ordersPanel" class="dash-panel glass-card reservation-box"><h2>Orders</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Guest</th><th>Status</th><th>Total</th></tr></thead><tbody><tr><td>LV-2046</td><td>Riya M.</td><td>Preparing</td><td>&#8377;7,344</td></tr><tr><td>LV-2047</td><td>Daniel K.</td><td>Delivered</td><td>&#8377;10,540</td></tr><tr><td>LV-2048</td><td>Sofia A.</td><td>Confirmed</td><td>&#8377;4,484</td></tr></tbody></table></div></section>
+      <section id="usersPanel" class="dash-panel glass-card reservation-box" hidden><h2>Users</h2><p>Premium guest profiles, loyalty tier, order frequency, and reservation history.</p></section>
+      <section id="inventoryPanel" class="dash-panel glass-card reservation-box" hidden><h2>Inventory</h2><p>Truffle, burrata, espresso beans, pantry goods, packaging, and vendor stock watch.</p></section>
+      <section id="vendorsPanel" class="dash-panel glass-card reservation-box" hidden><h2>Vendors</h2><p>Curated marketplace partners, onboarding, quality score, and fulfillment region.</p></section>
+      <section id="analyticsPanel" class="dash-panel glass-card reservation-box" hidden><h2>Analytics</h2><p>Conversion, repeat orders, cuisine demand, booking heatmap, and branch performance.</p></section>
+      <section id="reviewsPanel" class="dash-panel glass-card reservation-box" hidden><h2>Reviews</h2><p>Guest sentiment, chef notes, response workflow, and quality recovery.</p></section>
+      <section id="revenuePanel" class="dash-panel glass-card reservation-box" hidden><h2>Revenue</h2><p>Restaurant sales, café sales, marketplace basket value, delivery margin, and franchise fees.</p></section>
+    </div></div></section>
+  </main><footer class="footer"><div class="container sub-footer"><span>Admin dashboard UI</span><span>La Vuerte operations</span></div></footer>
+  <script src="js/wishlist.js"></script><script src="js/cart.js"></script><script src="js/main.js"></script>
+</body>
+</html>

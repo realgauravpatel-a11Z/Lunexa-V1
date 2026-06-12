@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="La Vuerte is a premium global café, luxury restaurant, and gourmet food marketplace. Taste Beyond Borders.">
+  <title>La Vuerte | Taste Beyond Borders</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <div class="site-shell">
+    <header class="nav">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="menu.html">Menu</a><a href="about.html">About</a><a href="branches.html">Branches</a><a href="offers.html">Offers</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="icon-btn" href="wishlist.html" aria-label="Wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.9c-2-2-5.1-1.8-6.9.3L12 7.4l-1.9-2.2C8.3 3.1 5.2 2.9 3.2 4.9c-2.3 2.3-2 6.1.5 8.2l8.3 7.2 8.3-7.2c2.5-2.1 2.8-5.9.5-8.2Z"/></svg></a><span class="wish-count">0</span>
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5h11l-1 11h-9l-1-11Z"/><path d="M9 8.5a3 3 0 0 1 6 0"/><path d="M8.5 12h7"/></svg></a><span class="cart-count">0</span>
+          <a class="btn light" href="checkout.html">Order Now</a>
+          <button class="nav-toggle" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" style="--hero-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80');">
+        <div class="hero-inner">
+          <div class="reveal">
+            <p class="eyebrow">Premium global café and marketplace</p>
+            <h1>La Vuerte</h1>
+            <p class="hero-copy">Taste Beyond Borders. Italian café grace, global chef craft, and marketplace discoveries presented with quiet five-star confidence.</p>
+            <div class="hero-actions">
+              <a class="btn gold" href="menu.html">Explore Menu</a>
+              <a class="btn light" href="checkout.html">Order Now</a>
+              <a class="btn light" href="#reservation">Book Table</a>
+            </div>
+          </div>
+          <aside class="hero-panel reveal" aria-label="Featured dish">
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1000&q=80" alt="Premium truffle pasta" loading="eager">
+            <div class="hero-dish-note"><span>Truffle Pappardelle</span><strong>&#8377;2,380</strong></div>
+          </aside>
+        </div>
+        <div class="scroll-indicator">Scroll<span></span></div>
+      </section>
+
+      <section id="signature" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Signature dishes</p>
+              <h2>Cravings, composed.</h2>
+            </div>
+            <a class="btn ghost" href="menu.html">View all dishes</a>
+          </div>
+          <div class="home-search glass-card">
+            <label class="field" for="homeFoodSearch"><span>Search food</span><input id="homeFoodSearch" class="search-input" type="search" placeholder="Search pasta, steak, espresso, sushi, dessert..."></label>
+            <a id="homeSearchLink" class="btn primary" href="menu.html">Search Menu</a>
+          </div>
+          <p id="homeSearchEmpty" class="glass-card reservation-box hidden">No featured dish matched that search. Open the full menu for more La Vuerte plates.</p>
+          <div id="signatureGrid" class="grid three"></div>
+        </div>
+      </section>
+
+      <section class="section editorial-band">
+        <div class="container split">
+          <div class="reveal">
+            <p class="eyebrow">Global cuisine</p>
+            <h2>Italian warmth, borderless appetite.</h2>
+            <p>La Vuerte brings together wood-fire comfort, Japanese precision, Mediterranean freshness, Dubai hospitality, and café rituals that make every hour feel considered.</p>
+            <div class="stat-row">
+              <div class="stat"><strong data-counter="42" data-suffix="+">0</strong><span>global plates</span></div>
+              <div class="stat"><strong data-counter="18" data-suffix="+">0</strong><span>chef partners</span></div>
+              <div class="stat"><strong data-counter="7">0</strong><span>market shelves</span></div>
+              <div class="stat"><strong data-counter="5">0</strong><span>star service rhythm</span></div>
+            </div>
+          </div>
+          <div class="image-stack reveal">
+            <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=1000&q=80" alt="Global sushi dish" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Premium café espresso" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split reverse">
+          <div class="image-stack reveal">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1000&q=80" alt="Luxury restaurant preparation" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80" alt="Premium dessert" loading="lazy">
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">Lifestyle story</p>
+            <h2>Morning espresso. Midnight tiramisu. One elegant table.</h2>
+            <p>From polished breakfast boards to slow dinner plates, La Vuerte is built for guests who value calm service, beautiful ingredients, and food that travels well across cultures.</p>
+            <a class="btn primary" href="about.html">Discover the brand</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="reservation" class="section tight">
+        <div class="container reservation-box glass-card reveal">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Reservations</p>
+              <h2>Choose your moment.</h2>
+            </div>
+            <p>Reserve the right La Vuerte experience in under a minute. Our concierge confirms the table, occasion details, and preferred pace.</p>
+          </div>
+          <div class="reservation-layout">
+            <form class="form-grid reservation-form" data-validate data-success="Your reservation request has been received">
+              <div class="field full">
+                <label>Experience</label>
+                <input id="resExperience" type="hidden" value="Chef dinner" required>
+                <div class="experience-grid" role="group" aria-label="Reservation experience">
+                  <button class="experience-option active" type="button" data-experience="Chef dinner" aria-pressed="true"><strong>Chef Dinner</strong><span>Signature dishes, elegant pacing</span></button>
+                  <button class="experience-option" type="button" data-experience="Cafe meeting" aria-pressed="false"><strong>Cafe Meeting</strong><span>Espresso, brunch, quiet table</span></button>
+                  <button class="experience-option" type="button" data-experience="Celebration" aria-pressed="false"><strong>Celebration</strong><span>Dessert note, premium corner</span></button>
+                  <button class="experience-option" type="button" data-experience="Private dining" aria-pressed="false"><strong>Private Dining</strong><span>Concierge callback required</span></button>
+                </div>
+              </div>
+              <div class="field"><label for="resName">Name</label><input id="resName" autocomplete="name" required></div>
+              <div class="field"><label for="resPhone">Phone</label><input id="resPhone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label for="resDate">Date</label><input id="resDate" type="date" required></div>
+              <div class="field"><label for="resGuests">Guests</label><select id="resGuests" required><option value="">Select guests</option><option>2 guests</option><option>4 guests</option><option>6 guests</option><option>8 guests</option><option>Private dining</option></select></div>
+              <div class="field full">
+                <label for="resTime">Preferred time</label>
+                <input id="resTime" placeholder="Choose a suggested slot" readonly required>
+                <div class="time-slots" aria-label="Suggested reservation times">
+                  <button type="button" class="time-chip" data-time="12:30 PM" aria-pressed="false">12:30 PM</button>
+                  <button type="button" class="time-chip" data-time="2:00 PM" aria-pressed="false">2:00 PM</button>
+                  <button type="button" class="time-chip" data-time="7:30 PM" aria-pressed="false">7:30 PM</button>
+                  <button type="button" class="time-chip" data-time="9:00 PM" aria-pressed="false">9:00 PM</button>
+                </div>
+              </div>
+              <div class="field full"><label for="resNote">Occasion details</label><textarea id="resNote" placeholder="Anniversary, business table, tasting menu, dietary notes, or seating preference"></textarea></div>
+              <button class="btn primary" type="submit">Request Reservation</button>
+            </form>
+            <aside class="concierge-card">
+              <p class="eyebrow">La Vuerte concierge</p>
+              <h3>What happens next?</h3>
+              <ul class="concierge-list">
+                <li><strong>10 min</strong><span>Reservation review and table match</span></li>
+                <li><strong>Call</strong><span>Concierge confirms timing and occasion</span></li>
+                <li><strong>Ready</strong><span>Chef notes and seating preference sent to host</span></li>
+              </ul>
+              <div class="concierge-note">
+                <span>Need help now?</span>
+                <a href="mailto:devleadlabs@gmail.com">devleadlabs@gmail.com</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid three">
+          <article class="offer-card card reveal"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80" alt="Burrata pizza" loading="lazy"><div class="dish-body"><p class="eyebrow">Offer</p><h3 class="dish-title">Aperitivo Gold Hour</h3><p>Complimentary café dessert with selected signature mains before 7 PM.</p></div></article>
+          <article class="offer-card card reveal"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Fresh salad" loading="lazy"><div class="dish-body"><p class="eyebrow">Marketplace</p><h3 class="dish-title">Chef Pantry Sets</h3><p>Olive oil, spice, preserve, and espresso bundles curated for home tables.</p></div></article>
+          <article class="offer-card card reveal"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80" alt="Elegant restaurant interior" loading="lazy"><div class="dish-body"><p class="eyebrow">Franchise</p><h3 class="dish-title">Bring La Vuerte Home</h3><p>A hospitality-led franchise model for premium neighborhoods and lifestyle districts.</p><a class="btn ghost" href="contact.html#franchise">Inquire</a></div></article>
+        </div>
+      </section>
+    </main>
+
+    <a class="floating-cta btn gold" href="menu.html">Order Now</a>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div><h3 class="brand"><span class="brand-mark">LV</span><span>La Vuerte</span></h3><p>Taste Beyond Borders through premium restaurant dining, café rituals, and gourmet marketplace curation.</p></div>
+        <div><h4>Experience</h4><a href="menu.html">Menu</a><a href="dish-details.html">Dish Details</a><a href="offers.html">Offers</a></div>
+        <div><h4>Company</h4><a href="about.html">About</a><a href="chef.html">Chef Team</a><a href="branches.html">Branches</a></div>
+        <div><h4>Portals</h4><a href="admin.html">Admin</a><a href="vendor.html">Vendor</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="container sub-footer"><span>© 2026 La Vuerte. All rights reserved by DevLeadLabs.</span><span>Luxury café, restaurant, and food marketplace.</span></div>
+    </footer>
+  </div>
+  <script src="js/wishlist.js"></script><script src="js/cart.js"></script><script src="js/main.js"></script>
+</body>
+</html>

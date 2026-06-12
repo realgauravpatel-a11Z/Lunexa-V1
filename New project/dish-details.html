@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View La Vuerte dish details, gallery, ingredients, nutrition, reviews, wishlist, and cart options.">
+  <title>Dish Details | La Vuerte</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="detail">
+  <header class="nav nav-inner"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a><nav class="nav-links"><a href="menu.html">Menu</a><a href="wishlist.html">Wishlist</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a></nav><div class="nav-actions"><a class="icon-btn" href="wishlist.html" aria-label="Wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.9c-2-2-5.1-1.8-6.9.3L12 7.4l-1.9-2.2C8.3 3.1 5.2 2.9 3.2 4.9c-2.3 2.3-2 6.1.5 8.2l8.3 7.2 8.3-7.2c2.5-2.1 2.8-5.9.5-8.2Z"/></svg></a><span class="wish-count">0</span><a class="icon-btn" href="cart.html" aria-label="Cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5h11l-1 11h-9l-1-11Z"/><path d="M9 8.5a3 3 0 0 1 6 0"/><path d="M8.5 12h7"/></svg></a><span class="cart-count">0</span><button class="nav-toggle">Menu</button></div></div></header>
+  <main>
+    <section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1600&q=80');"><div class="container reveal"><p class="eyebrow">Dish details</p><h1>Chef Plate</h1><p>Gallery, ingredients, nutrition notes, reviews, similar dishes, and cart controls in one refined flow.</p></div></section>
+    <section class="section"><div class="container"><div id="dishDetail" class="detail-layout"></div></div></section>
+    <section class="section tight"><div class="container"><div class="section-head"><div><p class="eyebrow">Reviews</p><h2>Guest notes.</h2></div><p id="reviewIntro">Dish-specific feedback from guests who ordered this plate.</p></div><div id="dishReviews" class="review-grid"></div></div></section>
+    <section class="section tight"><div class="container"><div class="section-head"><div><p class="eyebrow">Similar dishes</p><h2>You may also like.</h2></div><p>More La Vuerte plates with the same premium appetite.</p></div><div id="similarGrid" class="grid three"></div></div></section>
+  </main>
+  <div id="imageModal" class="modal"><div class="modal-content"><button class="modal-close icon-btn" aria-label="Close preview">X</button><img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Dish fullscreen preview"></div></div>
+  <footer class="footer"><div class="container sub-footer"><span>La Vuerte dish experience</span><span><a href="menu.html">Back to menu</a></span></div></footer>
+  <script src="js/wishlist.js"></script><script src="js/cart.js"></script><script src="js/main.js"></script>
+</body>
+</html>

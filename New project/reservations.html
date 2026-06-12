@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reserve a La Vuerte table for chef dinners, cafe meetings, celebrations, and private dining.">
+  <title>Reservations | La Vuerte</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="reservations">
+  <header class="nav nav-inner"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a><nav class="nav-links" aria-label="Primary navigation"></nav><div class="nav-actions"><a class="icon-btn" href="wishlist.html" aria-label="Wishlist"></a><span class="wish-count">0</span><a class="icon-btn" href="cart.html" aria-label="Cart"></a><span class="cart-count">0</span><a class="btn primary" href="menu.html">Order Now</a><button class="nav-toggle" aria-label="Open navigation menu">Menu</button></div></div></header>
+  <main>
+    <section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80');"><div class="container reveal"><p class="eyebrow">Concierge booking</p><h1>Reservations</h1><p>Book a table shaped around occasion, pace, dietary needs, and the kind of hospitality that makes dinner feel effortless.</p></div></section>
+    <section class="section"><div class="container reservation-box glass-card reveal"><div class="section-head"><div><p class="eyebrow">Reserve now</p><h2>Tell us your moment.</h2></div><p>Our host team confirms requests by phone or email and notes seating, celebration, and menu preferences before arrival.</p></div><form class="form-grid" data-validate data-success="Reservation request received"><div class="field"><label for="bookingName">Full name</label><input id="bookingName" autocomplete="name" required></div><div class="field"><label for="bookingPhone">Phone</label><input id="bookingPhone" type="tel" autocomplete="tel" required></div><div class="field"><label for="bookingEmail">Email</label><input id="bookingEmail" type="email" autocomplete="email" required></div><div class="field"><label for="bookingGuests">Guests</label><select id="bookingGuests" required><option value="">Select guests</option><option>2 guests</option><option>4 guests</option><option>6 guests</option><option>8 guests</option><option>Private dining</option></select></div><div class="field"><label for="bookingDate">Date</label><input id="bookingDate" type="date" required></div><div class="field"><label for="bookingTime">Time</label><input id="bookingTime" placeholder="7:30 PM" required></div><div class="field full"><label for="bookingNote">Occasion and preferences</label><textarea id="bookingNote" placeholder="Anniversary, business dinner, quiet cafe table, allergies, or chef tasting request"></textarea></div><button class="btn primary" type="submit">Request Reservation</button></form></div></section>
+  </main>
+  <footer class="footer"></footer>
+  <script src="js/wishlist.js"></script><script src="js/cart.js"></script><script src="js/main.js"></script>
+</body>
+</html>

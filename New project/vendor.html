@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="La Vuerte vendor dashboard UI for menu, stock, sales, and orders.">
+  <title>Vendor Dashboard | La Vuerte</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="vendor">
+  <header class="nav nav-inner"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a><nav class="nav-links"><a href="admin.html">Admin</a><a href="menu.html">Menu</a><a href="index.html">Storefront</a></nav><div class="nav-actions"><button class="nav-toggle">Menu</button></div></div></header>
+  <main><section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=80');"><div class="container reveal"><p class="eyebrow">UI only</p><h1>Vendor</h1><p>Marketplace partner workspace for menus, stock, sales, and order readiness.</p></div></section>
+    <section class="section"><div class="container dashboard-grid"><aside class="dash-nav glass-card"><button class="active" data-panel="vendorMenu">Menu</button><button data-panel="vendorStock">Stock</button><button data-panel="vendorSales">Sales</button><button data-panel="vendorOrders">Orders</button></aside><div>
+      <div class="grid four"><div class="metric-card glass-card"><p class="eyebrow">Active items</p><h2>24</h2></div><div class="metric-card glass-card"><p class="eyebrow">Low stock</p><h2>3</h2></div><div class="metric-card glass-card"><p class="eyebrow">Sales</p><h2>&#8377;7.3L</h2></div><div class="metric-card glass-card"><p class="eyebrow">Orders</p><h2>71</h2></div></div>
+      <section id="vendorMenu" class="dash-panel glass-card reservation-box"><h2>Menu</h2><div class="table-wrap"><table><thead><tr><th>Item</th><th>Type</th><th>Status</th><th>Price</th></tr></thead><tbody><tr><td>Truffle Oil Set</td><td>Marketplace</td><td>Live</td><td>&#8377;2,720</td></tr><tr><td>Velvet Espresso Beans</td><td>Café</td><td>Live</td><td>&#8377;1,530</td></tr><tr><td>Sicilian Citrus Preserve</td><td>Pantry</td><td>Review</td><td>&#8377;1,190</td></tr></tbody></table></div></section>
+      <section id="vendorStock" class="dash-panel glass-card reservation-box" hidden><h2>Stock</h2><p>Update availability, low-stock alerts, branch allocation, and delivery readiness.</p></section>
+      <section id="vendorSales" class="dash-panel glass-card reservation-box" hidden><h2>Sales</h2><p>Daily sales, top baskets, repeat customers, and marketplace commission view.</p></section>
+      <section id="vendorOrders" class="dash-panel glass-card reservation-box" hidden><h2>Orders</h2><p>Accepted, packed, courier-ready, delivered, and issue-resolution orders.</p></section>
+    </div></div></section>
+  </main><footer class="footer"><div class="container sub-footer"><span>Vendor dashboard UI</span><span>La Vuerte marketplace</span></div></footer>
+  <script src="js/wishlist.js"></script><script src="js/cart.js"></script><script src="js/main.js"></script>
+</body>
+</html>

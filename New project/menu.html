@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore La Vuerte's premium global menu, from Italian café signatures to chef specials and gourmet marketplace plates.">
+  <title>Menu | La Vuerte</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+  <header class="nav nav-inner"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">LV</span><span>La Vuerte</span></a><nav class="nav-links"><a href="menu.html">Menu</a><a href="about.html">About</a><a href="offers.html">Offers</a><a href="wishlist.html">Wishlist</a><a href="cart.html">Cart</a></nav><div class="nav-actions"><a class="icon-btn" href="wishlist.html" aria-label="Wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.9c-2-2-5.1-1.8-6.9.3L12 7.4l-1.9-2.2C8.3 3.1 5.2 2.9 3.2 4.9c-2.3 2.3-2 6.1.5 8.2l8.3 7.2 8.3-7.2c2.5-2.1 2.8-5.9.5-8.2Z"/></svg></a><span class="wish-count">0</span><a class="icon-btn" href="cart.html" aria-label="Cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5h11l-1 11h-9l-1-11Z"/><path d="M9 8.5a3 3 0 0 1 6 0"/><path d="M8.5 12h7"/></svg></a><span class="cart-count">0</span><a class="btn primary" href="checkout.html">Order Now</a><button class="nav-toggle">Menu</button></div></div></header>
+  <main>
+    <section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=80');"><div class="container reveal"><p class="eyebrow">Restaurant + café + marketplace</p><h1>Menu</h1><p>Search chef signatures, café rituals, wellness plates, desserts, and global dishes designed for elegant cravings.</p></div></section>
+    <section class="section"><div class="container">
+      <div class="filter-bar glass-card"><input id="menuSearch" class="search-input" type="search" placeholder="Search pasta, espresso, sushi, dessert..."><div class="tabs"><button class="tab active" data-filter="All">All</button><button class="tab" data-filter="Signature">Signature</button><button class="tab" data-filter="Italian">Italian</button><button class="tab" data-filter="Cafe">Café</button><button class="tab" data-filter="Global">Global</button><button class="tab" data-filter="Chef Specials">Chef</button></div></div>
+      <p id="menuEmpty" class="glass-card reservation-box hidden">No dish matched that search. Try espresso, truffle, sushi, or brunch.</p>
+      <div id="menuGrid" class="grid four"></div>
+    </div></section>
+  </main>
+  <footer class="footer"><div class="container sub-footer"><span>La Vuerte</span><span><a href="index.html">Home</a></span></div></footer>
+  <script src="js/wishlist.js"></script><script src="js/cart.js"></script><script src="js/main.js"></script>
+</body>
+</html>
